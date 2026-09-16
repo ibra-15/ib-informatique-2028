@@ -1,0 +1,1 @@
+print("On fait informatique aujourd'hui!")
