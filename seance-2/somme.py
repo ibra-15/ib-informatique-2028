@@ -1,9 +1,9 @@
 n = int(input("Saisissez un entier à 3 chiffres : "))
+somme =0 
 
-def somme(entier):
-    u = entier % 10
-    d = (entier //10) %10
-    c = ((entier//10)//10 )% 10
-    return u+d+c
+while n > 0 :
+    chiffre = n%10
+    n //= 10
+    somme += chiffre
 
-print(f"La somme de ses chiffres est de : {somme(n)}")
+print(somme)
