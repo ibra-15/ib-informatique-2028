@@ -8,5 +8,6 @@ while montant > 0:
         if monnaie_val == 100 and montant > 0 :
             print(f"restant : {montant}")
             montant = 0
+            
         
     
