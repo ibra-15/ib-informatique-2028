@@ -14,6 +14,24 @@ def affichage_menu():
     print("================================================================================================================")      
     print("\n") 
 
+def ajout():
+    nom = input("Quel est le nom du document? ")
+    n_page = int(input("Combien de page y a-t-il ? "))
+    if n_page <= 0 or not nom:
+        print("Entree non valide")
+        return 
+    doc= [nom,n_page]
+    file_document.append(doc)
+
+def imprimer():
+    while file_document:
+        for document in file_document:
+            if document == file_document.pop(0):
+                print(document)
+                print(f"{document[0]} a été imprimé !")
+                print(f"Il a pris {document[1] * TEMPS_PAR_PAGE} secondes!")
+    print("Tout les documents ont été imprimés!")
+    0
 def lire_entier(message):
 
     while True:        
@@ -27,23 +45,10 @@ def lire_entier(message):
             
 
             if num == 0:
-                nom = input("Quel est le nom du document? ")
-                n_page = int(input("Combien de page y a-t-il ? "))
-                if n_page <= 0 or not nom:
-                    continue
-                doc= [nom,n_page]
-                file_document.append(doc)
-
+                ajout()
             elif num == 1:
-                while file_document:
-                    for document in file_document:
-                        if document == file_document.pop(0):
-                            print(document)
-                            print(f"{document[0]} a été imprimé !")
-                            print(f"Il a pris {document[1] * TEMPS_PAR_PAGE} secondes!")
+                imprimer()
                         
-
-                print("Tout les documents ont été imprimés!")
             elif num == -1:
                 print("Leaving the print")
                 break

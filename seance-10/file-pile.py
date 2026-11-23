@@ -1,7 +1,7 @@
 pile_entree = []
 pile_sortie = []
 
-menu = {"0": "Add element","1":"Transvase","2":"Treat element","-1":"Leave"}
+menu = {"0": "Add element","1":"Treat element","-1":"Leave"}
 def affichage_menu():
     print("\n")
     print("================================================================================================================")      
@@ -40,8 +40,8 @@ def lire_entier(message):
             elif num == 1:
                 if not pile_sortie and pile_entree:
                     transvase()
-            elif num == 2:
-                treat_element()
+                else:
+                    treat_element()
             elif num == -1:
                 print("Left program")
                 break
